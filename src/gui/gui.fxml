@@ -1,0 +1,22 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.CheckBox?>
+<GridPane fx:controller="gui.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER" hgap="10" vgap="10">
+    <Label GridPane.rowIndex="0" GridPane.columnIndex="0" text="Methode: " fx:id="lblMethode"/>
+    <ComboBox GridPane.rowIndex="0" GridPane.columnIndex="1" fx:id="cboxMethods" onAction="#switchSortMethod"
+              GridPane.fillWidth="true"/>
+    <Button GridPane.rowIndex="0" GridPane.columnIndex="2" text="Mischen" fx:id="btnMix" onAction="#remix"/>
+
+    <Button GridPane.rowIndex="1" GridPane.columnIndex="0" text="Schritt" fx:id="btnStep" onAction="#singleStep"/>
+    <Button GridPane.rowIndex="1" GridPane.columnIndex="1"  text="Start" fx:id="btnStart"  onAction="#pauseUnpause"/>
+    <Button GridPane.rowIndex="1" GridPane.columnIndex="2"  text="Reset" fx:id="btnReset"  onAction="#resetSort"/>
+
+    <Canvas GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.columnSpan="3" fx:id="canvas"
+            width="600" height="400" GridPane.fillWidth="true" GridPane.fillHeight="true"/>
+</GridPane>
