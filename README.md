@@ -2,7 +2,8 @@
 
 1. Extend the abstract class sort.Sortiermethode
 2. Implement the method sortierSchritt()
-3. Register your class to appear in the combobox cboxMethods. See gui.Controller.init().
+3. The first instruction should be super.sortierSchritt() for proper progress indication.
+4. Register your class to appear in the combobox cboxMethods. See gui.Controller.init().
 
 # How to run this code
 
