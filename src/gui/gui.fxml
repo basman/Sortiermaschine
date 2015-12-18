@@ -11,7 +11,6 @@
     <Label GridPane.rowIndex="0" GridPane.columnIndex="0" text="Methode: " fx:id="lblMethode"/>
     <ComboBox GridPane.rowIndex="0" GridPane.columnIndex="1" fx:id="cboxMethods" onAction="#switchSortMethod"
               GridPane.fillWidth="true"/>
-    <Button GridPane.rowIndex="0" GridPane.columnIndex="2" text="Mischen" fx:id="btnMix" onAction="#remix"/>
 
     <Button GridPane.rowIndex="1" GridPane.columnIndex="0" text="Schritt" fx:id="btnStep" onAction="#singleStep"/>
     <Button GridPane.rowIndex="1" GridPane.columnIndex="1"  text="Start" fx:id="btnStart"  onAction="#pauseUnpause"/>

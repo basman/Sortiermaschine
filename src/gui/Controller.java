@@ -113,11 +113,6 @@ public class Controller implements Runnable {
         }
     }
 
-    public void remix(ActionEvent actionEvent) {
-        ((Sortiermethode) cboxMethods.getValue()).mischen();
-        update();
-    }
-
     void sortCompleted() {
         running = false;
         paused = true;
