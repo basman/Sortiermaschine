@@ -113,7 +113,10 @@ public class Controller implements Runnable {
             int y = height - (int)(height*(zahlenreihe.get(i)/max));
 
             // male weisse linie über dem Strich
-            gc.setStroke(Color.WHITE);
+            if(zahlenreihe.get(i) == i+1)
+                gc.setStroke(Color.GREENYELLOW);
+            else
+                gc.setStroke(Color.WHITESMOKE);
             gc.strokeLine(x, y, x, 0);
 
             // male Strich
