@@ -9,6 +9,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import sort.DerChaot;
 import sort.Sortiermethode;
@@ -30,6 +31,8 @@ public class Controller implements Runnable {
     private Canvas canvas;
     @FXML
     private ComboBox cboxMethods;
+    @FXML
+    private Label lblStepCount;
 
     public void init() {
         // Liste der verfügbaren Sortiermethoden setzen
@@ -135,5 +138,6 @@ public class Controller implements Runnable {
     public void run() {
         redraw();
         updateButtons();
+        lblStepCount.setText("" + ((Sortiermethode) cboxMethods.getValue()).getSortierSchritte());
     }
 }

@@ -12,6 +12,8 @@ public class DerChaot extends Sortiermethode {
 
     @Override
     public void sortierSchritt() {
+        super.sortierSchritt();
+        
         // suche zwei zufällige Positionen aus
         int j1 = (int)(Math.random() * zahlenreihe.size());
         int j2 = (int)(Math.random() * zahlenreihe.size());

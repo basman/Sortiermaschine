@@ -14,9 +14,18 @@ public abstract class Sortiermethode {
     protected ArrayList<Integer> zahlenreihe;
 
     private int mischSchritte = 0;
+    private int sortierSchritte = 0;
 
     public Sortiermethode() {
         bereit();
+    }
+
+    public int getMischSchritte() {
+        return mischSchritte;
+    }
+
+    public int getSortierSchritte() {
+        return sortierSchritte;
     }
 
     public void bereit() {
@@ -25,6 +34,7 @@ public abstract class Sortiermethode {
             zahlenreihe.add(i+1);
 
         mischSchritte = 0;
+        sortierSchritte = 0;
     }
 
     public void mischen() {
@@ -68,5 +78,7 @@ public abstract class Sortiermethode {
         return name;
     }
 
-    public abstract void sortierSchritt();
+    public void sortierSchritt() {
+        sortierSchritte++;
+    };
 }

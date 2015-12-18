@@ -10,8 +10,10 @@
 <GridPane fx:controller="gui.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER" hgap="10" vgap="10">
     <FlowPane GridPane.rowIndex="0" hgap="10">
-        <Label text="Methode: " fx:id="lblMethode"/>
+        <Label text="Methode: "/>
         <ComboBox  fx:id="cboxMethods" onAction="#switchSortMethod"/>
+        <Label text="Schritte: "/>
+        <Label fx:id="lblStepCount"/>
     </FlowPane>
 
     <FlowPane GridPane.rowIndex="1" hgap="10">
