@@ -121,7 +121,7 @@ public class Controller implements Runnable {
     void sortCompleted() {
         running = false;
         paused = true;
-
+        update();
     }
 
     private void updateButtons() {
