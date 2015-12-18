@@ -106,9 +106,9 @@ public class Worker implements Runnable {
         ArrayList<Integer> zahlenreihe = sort.getZahlenreihe();
         for(int i = 0; i< zahlenreihe.size(); i++) {
             Integer value = zahlenreihe.get(i);
-            if (value != i + 1)
-                c += Math.abs((i + 1 - value) / (float)zahlenreihe.size());
+            if (value == i + 1)
+                c++;
         }
-        return 1 - c / zahlenreihe.size();
+        return c / zahlenreihe.size();
     }
 }
