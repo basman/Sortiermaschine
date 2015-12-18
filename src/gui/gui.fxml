@@ -6,16 +6,20 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.FlowPane?>
 <GridPane fx:controller="gui.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER" hgap="10" vgap="10">
-    <Label GridPane.rowIndex="0" GridPane.columnIndex="0" text="Methode: " fx:id="lblMethode"/>
-    <ComboBox GridPane.rowIndex="0" GridPane.columnIndex="1" fx:id="cboxMethods" onAction="#switchSortMethod"
-              GridPane.fillWidth="true"/>
+    <FlowPane GridPane.rowIndex="0" hgap="10">
+        <Label text="Methode: " fx:id="lblMethode"/>
+        <ComboBox  fx:id="cboxMethods" onAction="#switchSortMethod"/>
+    </FlowPane>
 
-    <Button GridPane.rowIndex="1" GridPane.columnIndex="0" text="Schritt" fx:id="btnStep" onAction="#singleStep"/>
-    <Button GridPane.rowIndex="1" GridPane.columnIndex="1"  text="Start" fx:id="btnStart"  onAction="#pauseUnpause"/>
-    <Button GridPane.rowIndex="1" GridPane.columnIndex="2"  text="Reset" fx:id="btnReset"  onAction="#resetSort"/>
+    <FlowPane GridPane.rowIndex="1" hgap="10">
+        <Button text="Schritt" fx:id="btnStep" onAction="#singleStep"/>
+        <Button text="Start" fx:id="btnStart"  onAction="#pauseUnpause"/>
+        <Button text="Reset" fx:id="btnReset"  onAction="#resetSort"/>
+    </FlowPane>
 
-    <Canvas GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.columnSpan="3" fx:id="canvas"
+    <Canvas GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="3" fx:id="canvas"
             width="600" height="400" GridPane.fillWidth="true" GridPane.fillHeight="true"/>
 </GridPane>
