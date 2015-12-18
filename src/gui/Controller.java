@@ -10,6 +10,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.paint.Color;
 import sort.DerChaot;
 import sort.Sortiermethode;
@@ -33,6 +34,10 @@ public class Controller implements Runnable {
     private ComboBox cboxMethods;
     @FXML
     private Label lblStepCount;
+    @FXML
+    private ProgressBar progressBar;
+    @FXML
+    private Label lblProgress;
 
     public void init() {
         // Liste der verfügbaren Sortiermethoden setzen
@@ -47,6 +52,7 @@ public class Controller implements Runnable {
         worker = new Worker(this);
         updateButtons(); // run one update cycle in current thread
         worker.reset((Sortiermethode)cboxMethods.getValue());
+        progressBar.setProgress(0);
         redraw();
     }
 
@@ -139,5 +145,9 @@ public class Controller implements Runnable {
         redraw();
         updateButtons();
         lblStepCount.setText("" + ((Sortiermethode) cboxMethods.getValue()).getSortierSchritte());
+
+        float progressValue = worker.getProgress();
+        this.progressBar.setProgress(progressValue);
+        lblProgress.setText(String.format("%.2f%%", progressValue * 100));
     }
 }

@@ -97,4 +97,18 @@ public class Worker implements Runnable {
         controller.sortCompleted();
         pause = true;
     }
+
+    public float getProgress() {
+        if(sort == null)
+            return 0;
+
+        float c = 0; // gemittelte Entfernung zur Zielposition
+        ArrayList<Integer> zahlenreihe = sort.getZahlenreihe();
+        for(int i = 0; i< zahlenreihe.size(); i++) {
+            Integer value = zahlenreihe.get(i);
+            if (value != i + 1)
+                c += Math.abs((i + 1 - value) / (float)zahlenreihe.size());
+        }
+        return 1 - c / zahlenreihe.size();
+    }
 }
